@@ -1,22 +1,42 @@
-# 🎯 Microservices Orchestrator
+# Microservices Orchestrator
 
-Service orchestration and coordination platform.
+A service orchestration tool with circuit breaker pattern.
 
 ## Features
+
+- Service registration
 - Service discovery
-- Load balancing algorithms
-- Circuit breaker implementation
-- Distributed tracing
-- Service mesh integration
-- Health monitoring
-- Auto-recovery mechanisms
+- Circuit breaker pattern
+- Health checking
+- Failure handling
 
 ## Tech Stack
-- Go
-- Kubernetes
-- Istio / Linkerd
-- Jaeger
+
+- **Language**: Node.js
+- **Pattern**: Circuit Breaker
+
+## Project Structure
+
+\`\`\`
+microservices-orchestrator/
+├── src/
+│   ├── orchestrator.js  # Core orchestrator
+│   ├── utils/           # Health checker
+│   └── index.js         # API server
+└── package.json
+\`\`\`
+
+## Usage
+
+\`\`\`bash
+npm start
+\`\`\`
+
+## API Endpoints
+
+- \`POST /services/:name/register\` - Register service
+- \`POST /services/:name/call\` - Call service
 
 ---
 
-**POWERED BY L8AB SYSTEMS** ⚡
+**POWERED BY L8AB SYSTEMS**
