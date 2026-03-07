@@ -1,3 +1,5 @@
+![Build Status](https://img.shields.io/github/actions/workflow/status/L8ab/microservices-orchestrator/ci.yml?branch=main) ![License](https://img.shields.io/github/license/L8ab/microservices-orchestrator)
+
 # Microservices Orchestrator
 
 A service orchestration tool with circuit breaker pattern.
@@ -40,3 +42,7 @@ npm start
 ---
 
 **POWERED BY L8AB SYSTEMS**
+
+
+## Structure
+This repository is configured with enterprise standards, CI pipelines, and a structured codebase.
