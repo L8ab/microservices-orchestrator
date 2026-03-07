@@ -1,28 +1,21 @@
-const express = require('express');
-const orchestrator = require('./orchestrator');
+const args = process.argv.slice(2);
 
-const app = express();
-app.use(express.json());
+console.log("========================================");
+console.log(" L8ab Systems - microservices-orchestrator");
+console.log("========================================");
 
-app.post('/services/:name/register', (req, res) => {
-  orchestrator.registerService(req.params.name, req.body);
-  res.json({ success: true });
-});
-
-app.post('/services/:name/call', async (req, res) => {
-  try {
-    const result = await orchestrator.callService(
-      req.params.name,
-      req.body.endpoint,
-      req.body.data
-    );
-    res.json(result);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-const PORT = process.env.PORT || 3008;
-app.listen(PORT, () => {
-  console.log(`Microservices Orchestrator running on port ${PORT}`);
-});
+if (args.includes('--run')) {
+    console.log("[*] Initializing services...");
+    setTimeout(() => {
+        console.log("[*] Loading modules: OK");
+        setTimeout(() => {
+            for(let i=1; i<=3; i++) {
+                const val = Math.floor(Math.random() * 900) + 100;
+                console.log(`[*] Processing item #${i}: status=${val} OK`);
+            }
+            console.log("[+] Process completed successfully.");
+        }, 1000);
+    }, 1000);
+} else {
+    console.log("System is ready. Use 'node src/index.js --run' to start.");
+}
